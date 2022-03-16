@@ -1,30 +1,38 @@
 ﻿namespace challenge
 {
-    internal class program
+    class program
     {
-        public static string highScorePlayer = "David";
-        public static int highScore = 435643;
+        static int highScore = 2452;
+        static string highScorePlayer = "pranked80085";
+        
 
-        private static void Main(string[] args)
+        static void Main(string[] args)
         {
-            CheckHighScore();
+            CheckHighScore(5556, "scroteyMCboogerballs");
+            CheckHighScore(3455, "markwhyborn");
+            CheckHighScore(7890, "yerfatmum");
+            CheckHighScore(9001, "Goku");
+            CheckHighScore(8999, "Vegeta");
+
+
             Console.ReadKey();
         }
 
-        private static void CheckHighScore()
+        public static void CheckHighScore(int playerScore, string playerName)
         {
-            int playerScore = 100084222;
-
-            string playerName = "Ben";
 
             if (playerScore > highScore)
             {
-                Console.WriteLine($"{playerName} has overtaken {highScorePlayer} by {playerScore - highScore} points.");
-                Console.WriteLine($"{playerName} is the new champion!");
+                highScore = playerScore;
+                highScorePlayer = playerName;
+                
+                Console.WriteLine($"{highScorePlayer} now holds the new record with a score of {highScore}.");
+                Console.WriteLine("-------------------------------------------------------------------------");
             }
             else
             {
-                Console.WriteLine($"With a score of {playerScore}, {playerName} was unable to dethrone {highScorePlayer}, who still reigns supreme with a hefty score of {highScore}!");
+                Console.WriteLine($"With a score of {playerScore}, {playerName} was unable to dethrone {highScorePlayer}.");
+                Console.WriteLine("-------------------------------------------------------------------------");
             }
         }
     }
